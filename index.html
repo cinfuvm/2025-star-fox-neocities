@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Fox 64</title>
+
+  <!-- Fuente retro -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="inicio" class="hero">
+    <!-- Arwing  -->
+    <img src="Images/arwing.gif" alt="Arwing girando" class="arwing">
+
+    <!-- Logo -->
+    <img src="Images/logosf.png" alt="Star Fox 64" class="logo">
+
+    <!-- Equipo Star Fox -->
+    <img src="Images/foxteam.png" alt="Equipo Star Fox" class="foxteam">
+
+    <!-- Texto presione start -->
+    <p id="start-text" class="retro">
+      Presione <span class="circle"></span>START para comenzar
+    </p>
+
+    <!-- Copyright -->
+    <p class="retro copyright">©1997 Nintendo</p>
+  </section>
+
+  <!-- Contenido principal -->
+  <section id="contenido">
+    <h2>Historia</h2>
+    <p>ASFLKJASLKFAKLSMFJLKAJSFLKAJSLKFJALKSFJKALSFJLASJFKLAJSKLFJASFJLAS</p>
+  </section>
+
+  <script>
+    document.getElementById("start-text").addEventListener("click", function() {
+    document.getElementById("contenido").scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

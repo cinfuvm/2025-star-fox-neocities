@@ -1,0 +1,127 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Press Start 2P', Arial, sans-serif;
+  scroll-behavior: smooth;
+  background: url("Images/bgsf.png") no-repeat center top fixed;
+  background-size: cover;
+  color: white;
+}
+
+.retro { font-family: 'Press Start 2P', cursive; }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.arwing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.logo {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  z-index: 2;
+}
+
+.foxteam {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  z-index: 2;
+}
+
+/* Texto presione start */
+#start-text {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: colorPulse 0.6s infinite alternate;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover: agranda y todo blanco */
+#start-text:hover {
+  transform: translateX(-50%) scale(1.2);
+  color: white !important;
+}
+
+/* Círculo sólido rojo */
+#start-text .circle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: red;
+  margin: 0 8px 0 10px;
+  vertical-align: middle;
+
+  animation: circlePulse 1.5s infinite alternate;
+  transition: all 0.3s ease;
+}
+
+/* Hover: círculo tambien blanco */
+#start-text:hover .circle {
+  background: white !important;
+}
+
+/* Animación de cambio color blanco */
+@keyframes colorPulse {
+  0%   { color: red; }
+  100% { color: white; }
+}
+
+/* Círculo cambia de color junto texto */
+#start-text {
+  color: red;
+}
+
+#start-text .circle {
+  animation: circlePulse 0.6s infinite alternate;
+}
+
+@keyframes circlePulse {
+  0%   { background: red; }
+  100% { background: white; }
+}
+
+/* Copyright */
+.copyright {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  z-index: 2;
+}
+
+/* Content */
+#contenido {
+  padding: 50px;
+  background: rgba(0,0,0,0.7);
+}

@@ -1,16 +1,25 @@
-body, html {
+#dialog-text {
+  white-space: pre-wrap;  
+  display: inline-block;
+  width: 100%;            
+}
+
+/* ===== Base ===== */
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'Press Start 2P', Arial, sans-serif;
   scroll-behavior: smooth;
+  color: white;
+  overflow-x: hidden;
   background: url("Images/bgsf.png") no-repeat center top fixed;
   background-size: cover;
-  color: white;
 }
 
 .retro { font-family: 'Press Start 2P', cursive; }
 
+/* ===== Hero (pantalla principal) ===== */
 .hero {
   position: relative;
   height: 100vh;
@@ -23,7 +32,7 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1200px;
+  width: 75vw;
   transform: translate(-50%, -50%);
   z-index: 0;
   opacity: 0.85;
@@ -31,10 +40,10 @@ body, html {
 
 .logo {
   position: absolute;
-  top: 2%;
+  top: 1%;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
+  width: 60vw;
   z-index: 2;
 }
 
@@ -43,7 +52,7 @@ body, html {
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
+  width: 65vw;
   z-index: 2;
 }
 
@@ -53,75 +62,129 @@ body, html {
   bottom: 7%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 1.5vw;
   cursor: pointer;
   z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   animation: colorPulse 0.6s infinite alternate;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform .25s ease, color .25s ease;
 }
 
-/* Hover: agranda y todo blanco */
-#start-text:hover {
-  transform: translateX(-50%) scale(1.2);
-  color: white !important;
+.section-title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5vw;
+  color: white;
+  z-index: 5;
 }
 
-/* Círculo sólido rojo */
+#start-text:hover { transform: translateX(-50%) scale(1.15); color: white !important; }
+
 #start-text .circle {
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 1.5vw;
+  height: 1.5vw;
   border-radius: 50%;
   background: red;
   margin: 0 8px 0 10px;
   vertical-align: middle;
-
-  animation: circlePulse 1.5s infinite alternate;
-  transition: all 0.3s ease;
-}
-
-/* Hover: círculo tambien blanco */
-#start-text:hover .circle {
-  background: white !important;
-}
-
-/* Animación de cambio color blanco */
-@keyframes colorPulse {
-  0%   { color: red; }
-  100% { color: white; }
-}
-
-/* Círculo cambia de color junto texto */
-#start-text {
-  color: red;
-}
-
-#start-text .circle {
   animation: circlePulse 0.6s infinite alternate;
+  transition: all .2s ease;
 }
+#start-text:hover .circle { background: white !important; }
 
-@keyframes circlePulse {
-  0%   { background: red; }
-  100% { background: white; }
-}
+@keyframes colorPulse { 0% { color: red } 100% { color: white } }
+@keyframes circlePulse { 0% { background: red } 100% { background: white } }
 
-/* Copyright */
 .copyright {
   position: absolute;
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 18px;
+  font-size: 1.2vw;
   color: rgba(255,255,255,0.85);
   z-index: 2;
 }
 
-/* Content */
-#contenido {
-  padding: 50px;
-  background: rgba(0,0,0,0.7);
+/* ===== Historia ===== */
+.historia {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Planeta */
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20vw;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Pepper siempre visible */
+.pepper {
+  position: absolute;
+  bottom: 50%;
+  left: 17%;
+  width: 18vw;
+  z-index: 2;
+  transform: perspective(800px) rotateY(28deg);
+  transform-origin: center;
+  box-shadow: 0 0 80px 40px rgba(0,200,255,0.6);
+}
+
+/* Starfox estático */
+.starfox {
+  position: absolute;
+  bottom: 31%;
+  right: 15%;
+  width: 22vw;
+  z-index: 2;
+}
+
+/* Texto del diálogo */
+.dialog {
+  position: absolute;
+  top: 73%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1350px;
+  min-height: 140px;
+  background: rgba(0, 0, 0, 0);
+  padding: 25px;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2vw;
+  color: white;
+  text-align: left;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .arwing { width: 100vw; }
+
+  .pepper { width: 40vw; left: 3%; bottom: 22%; }
+  .starfox { width: 55vw; right: 3%; bottom: 18%; }
+  .planet { width: 50vw; }
+
+  .dialog { font-size: 3vw; width: 96%; }
+  #start-text { font-size: 3vw; bottom: 48%; }
+  #start-text .circle { width: 3vw; height: 3vw; }
+  .copyright { font-size: 2vw; bottom: 46%; }
 }

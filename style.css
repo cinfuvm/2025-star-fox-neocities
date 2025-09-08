@@ -72,18 +72,10 @@ html, body {
   transition: transform .25s ease, color .25s ease;
 }
 
-.section-title {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Press Start 2P', cursive;
-  font-size: 2.5vw;
-  color: white;
-  z-index: 5;
+#start-text:hover { 
+  transform: translateX(-50%) scale(1.15); 
+  color: white !important; 
 }
-
-#start-text:hover { transform: translateX(-50%) scale(1.15); color: white !important; }
 
 #start-text .circle {
   display: inline-block;
@@ -98,8 +90,14 @@ html, body {
 }
 #start-text:hover .circle { background: white !important; }
 
-@keyframes colorPulse { 0% { color: red } 100% { color: white } }
-@keyframes circlePulse { 0% { background: red } 100% { background: white } }
+@keyframes colorPulse { 
+  0% { color: red } 
+  100% { color: white } 
+}
+@keyframes circlePulse { 
+  0% { background: red } 
+  100% { background: white } 
+}
 
 .copyright {
   position: absolute;
@@ -109,6 +107,26 @@ html, body {
   font-size: 1.2vw;
   color: rgba(255,255,255,0.85);
   z-index: 2;
+}
+
+/* Contenedor del título */
+.historia-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black;                
+  padding: 20px 0;
+  border-bottom: 3px solid rgba(0, 200, 255, 0.7); 
+  text-align: center;
+  z-index: 10;
+}
+
+.section-title {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5vw;
+  color: white;
 }
 
 /* ===== Historia ===== */
@@ -134,7 +152,7 @@ html, body {
   opacity: 0.6;
 }
 
-/* Pepper siempre visible */
+/* Pepper */
 .pepper {
   position: absolute;
   bottom: 50%;
@@ -146,7 +164,7 @@ html, body {
   box-shadow: 0 0 80px 40px rgba(0,200,255,0.6);
 }
 
-/* Starfox estático */
+/* Starfox */
 .starfox {
   position: absolute;
   bottom: 31%;
@@ -175,6 +193,135 @@ html, body {
   overflow: hidden;
 }
 
+/* ===== Sinopsis ===== */
+.sinopsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  min-height: 80vh;
+  padding: 60px 40px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+}
+
+.sinopsis-content {
+  flex: 1;
+  max-width: 600px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1vw;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.sinopsis-content .highlight {
+  margin-top: 25px;
+  font-size: 1.3vw;
+  color: #00c8ff;
+  text-shadow: 0 0 10px rgba(0,200,255,0.8);
+}
+
+.logo-equipo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.logo-equipo {
+  max-width: 200px;
+  height: auto;
+}
+
+.sinopsis-poster {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sinopsis-poster img {
+  max-width: 100%;
+  height: auto;
+  border: 4px solid #00c8ff;
+  box-shadow: 0 0 30px rgba(0,200,255,0.6);
+  border-radius: 12px;
+}
+
+/* ===== Personajes ===== */
+.personajes {
+  padding: 80px 40px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+}
+
+.personaje {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.personaje.invertido {
+  flex-direction: row-reverse;
+}
+
+.personaje-img {
+  width: 25%;
+  max-width: 300px;
+}
+
+.greatfox-img {
+  max-width: 450px;
+}
+
+.personaje-info {
+  flex: 1;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1vw;
+  line-height: 1.6;
+}
+
+.personaje-info h3 {
+  margin-bottom: 15px;
+  font-size: 1.5vw;
+  color: #00c8ff;
+  text-shadow: 0 0 10px rgba(0,200,255,0.8);
+}
+
+/* Transmisión */
+.transmision {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-right: 15px;
+  
+  filter: drop-shadow(0 0 10px rgba(0,200,255,0.8));
+}
+
+.dialog-box {
+  background: rgba(0, 50, 120, 0.8);
+  border: 2px solid #00c8ff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9vw;
+  width: 500px;
+  box-shadow: 0 0 15px rgba(0,200,255,0.5);
+}
+
+.dialog-box p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .arwing { width: 100vw; }
@@ -187,4 +334,60 @@ html, body {
   #start-text { font-size: 3vw; bottom: 48%; }
   #start-text .circle { width: 3vw; height: 3vw; }
   .copyright { font-size: 2vw; bottom: 46%; }
+
+  .sinopsis {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sinopsis-content {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .sinopsis-content .highlight {
+    font-size: 3.5vw;
+  }
+
+  .sinopsis-poster {
+    margin-top: 30px;
+  }
+
+  .sinopsis-poster img {
+    width: 80%;
+  }
+
+  .personaje {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .personaje.invertido {
+    flex-direction: column;
+  }
+
+  .personaje-img {
+    width: 60%;
+    margin-bottom: 20px;
+  }
+
+  .personaje-info {
+    font-size: 3vw;
+  }
+
+  .personaje-info h3 {
+    font-size: 4vw;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+  }
+
+  .dialog-box {
+    min-height: 80px;
+    font-size: 2.5vw;
+    width: 100%;
+  }
 }

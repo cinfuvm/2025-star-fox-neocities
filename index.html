@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Star Fox 64</title>
 
+  <link rel="icon" type="image/png" href="Images/FoxIco.ico">
+
   <!-- Fuente retro -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -24,9 +26,12 @@
     <p class="retro copyright">©1997 Nintendo</p>
   </section>
 
-  <!-- Sección Historia (pantalla de misión) -->
+  <!-- Sección Historia -->
   <section id="historia" class="historia">
-    <h2 class="section-title">HISTORIA</h2>
+    <div class="historia-header">
+      <h2 class="section-title">HISTORIA</h2>
+    </div>
+
     <!-- Planeta -->
     <img src="Images/corneria.png" alt="Corneria" class="planet">
 
@@ -40,7 +45,118 @@
     <p id="dialog-text" class="dialog"></p>
   </section>
 
-  <!-- Script: comportamiento -->
+  <!-- Sección Sinopsis -->
+  <section id="sinopsis" class="sinopsis">
+    <div class="sinopsis-content">
+      <p>
+        <strong>El malvado Andross, desterrado al planeta Venom tras sus experimentos prohibidos, ha regresado para sembrar el caos en el sistema Lylat.</strong>
+      </p>
+      <p>
+        Tras la traición de Pigma Dengar y la caída de James McCloud, un nuevo escuadrón Star Fox ha nacido.
+      </p>
+      <p>
+        <strong>Fox McCloud</strong>, junto a <strong>Falco Lombardi, Slippy Toad y Peppy Hare</strong>, son la última esperanza para defender Corneria y liberar a todo Lylat de las garras de Andross.
+      </p>
+      <p class="highlight">
+        ¡Pilota tu Arwing y únete a la batalla por el futuro del sistema estelar!
+
+<div class="logo-equipo-container">
+    <img src="Images/FoxLogo.png" alt="Logo Star Fox" class="logo-equipo">
+  </div>
+      </p>
+    </div>
+
+    <div class="sinopsis-poster">
+      <img src="Images/StarFoxPromotionalPoster.png" alt="Poster Star Fox 64">
+    </div>
+  </section>
+
+  <!-- Sección Personajes -->
+  <section id="personajes" class="personajes">
+    <h2 class="section-title">PERSONAJES</h2>
+
+    <!-- Fox -->
+    <div class="personaje">
+      <img src="Images/Fox.png" alt="Fox McCloud" class="personaje-img">
+      <div class="personaje-info">
+        <h3>Fox McCloud</h3>
+        <p>Líder del equipo Star Fox e hijo del legendario James McCloud. Piloto experto, decidido a vengar la caída de su padre y salvar al sistema Lylat.</p>
+
+        <div class="transmision">
+          <img src="Images/FoxIdle.png" alt="Fox Idle" class="avatar" id="fox-avatar">
+          <div class="dialog-box">
+            <p id="fox-dialog"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Falco -->
+    <div class="personaje">
+      <img src="Images/Falco.png" alt="Falco Lombardi" class="personaje-img">
+      <div class="personaje-info">
+        <h3>Falco Lombardi</h3>
+        <p>El mejor tirador del equipo. Orgulloso y competitivo, pero un aliado invaluable en las batallas más intensas.</p>
+
+        <div class="transmision">
+          <img src="Images/FalcoIdle.png" alt="Falco Idle" class="avatar" id="falco-avatar">
+          <div class="dialog-box">
+            <p id="falco-dialog"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slippy -->
+    <div class="personaje">
+      <img src="Images/Slippy.png" alt="Slippy Toad" class="personaje-img">
+      <div class="personaje-info">
+        <h3>Slippy Toad</h3>
+        <p>El ingeniero del equipo, responsable de muchas de las armas y mejoras. Aunque torpe en combate, su ingenio es vital.</p>
+
+        <div class="transmision">
+          <img src="Images/SlippyIdle.png" alt="Slippy Idle" class="avatar" id="slippy-avatar">
+          <div class="dialog-box">
+            <p id="slippy-dialog"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Peppy -->
+    <div class="personaje">
+      <img src="Images/Peppy.png" alt="Peppy Hare" class="personaje-img">
+      <div class="personaje-info">
+        <h3>Peppy Hare</h3>
+        <p>Veterano del Star Fox original. Mentor de Fox, con la experiencia necesaria para guiar al equipo en los momentos más críticos.</p>
+
+        <div class="transmision">
+          <img src="Images/PeppyIdle.png" alt="Peppy Idle" class="avatar" id="peppy-avatar">
+          <div class="dialog-box">
+            <p id="peppy-dialog"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- ROB / Great Fox -->
+<div class="personaje invertido">
+  <img src="Images/GreatFox.png" alt="Great Fox" class="personaje-img greatfox-img">
+  <div class="personaje-info">
+    <h3>ROB 64 / Great Fox</h3>
+    <p>El androide asistente encargado de mantener la nave nodriza, el Great Fox. Provee soporte logístico y táctico al equipo Star Fox.</p>
+
+    <div class="transmision">
+      <img src="Images/RobIdle.png" alt="Rob Idle" class="avatar" id="rob-avatar">
+      <div class="dialog-box">
+        <p id="rob-dialog"></p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+  <!-- Script -->
   <script>
   document.addEventListener('DOMContentLoaded', () => {
     const startText = document.getElementById('start-text');
@@ -54,7 +170,7 @@
       historia.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
-    // Texto que se tipeará
+    // Texto de Pepper
     const text = `¡Necesitamos su ayuda, Star Fox! ¡Andross nos ha declarado la guerra! 
 A invadido el sistema Lylat... ¡y está intentando apoderarse de Corneria! 
 Nuestro ejercito no podrá detenerlo por sí solo. ¡Dense prisa, Star Fox!`;
@@ -65,7 +181,6 @@ Nuestro ejercito no podrá detenerlo por sí solo. ¡Dense prisa, Star Fox!`;
     function typeWriter(index = 0) {
       if (index < text.length) {
         dialog.innerHTML += text.charAt(index);
-        // Cambiar Pepper Idle/Talking
         pepper.src = (index % 4 < 2) ? "Images/PepperTalking.gif" : "Images/PepperIdle.png";
         setTimeout(() => typeWriter(index + 1), speed);
       } else {
@@ -76,15 +191,11 @@ Nuestro ejercito no podrá detenerlo por sí solo. ¡Dense prisa, Star Fox!`;
     function startHistoryAnimations() {
       if (typed) return;
       typed = true;
-
-      // fade-in de transmisión
       starfox.classList.add('visible');
-
-      // arrancar tipeo después de un delay
       setTimeout(() => typeWriter(0), 800);
     }
 
-    // Inicia animaciones cuando la sección historia entra en pantalla
+    // Observer para Pepper
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -95,6 +206,49 @@ Nuestro ejercito no podrá detenerlo por sí solo. ¡Dense prisa, Star Fox!`;
     }, { threshold: 0.3 });
 
     observer.observe(historia);
+  });
+
+  // Observer para personajes
+  document.addEventListener('DOMContentLoaded', () => {
+    const personajes = [
+      { id: "fox", text: "¡Haré lo que pueda! Andross no saldrá con la suya conmigo", speed: 40 },
+      { id: "falco", text: "¡Oye, Einstein, estoy de tu lado!", speed: 40 },
+      { id: "slippy", text: "¡Slippy al habla, estoy bien!", speed: 40 },
+      { id: "peppy", text: "¡Haz un tonel!", speed: 40 },
+      { id: "rob", text: "El Gran Fox te cubrirá.", speed: 40 }
+    ];
+
+    personajes.forEach(p => {
+      const dialog = document.getElementById(`${p.id}-dialog`);
+      const avatar = document.getElementById(`${p.id}-avatar`);
+      let typed = false;
+
+      function typeWriter(index = 0) {
+        if (index < p.text.length) {
+          dialog.innerHTML += p.text.charAt(index);
+          avatar.src = (index % 4 < 2) ? `Images/${capitalize(p.id)}Talking.gif` : `Images/${capitalize(p.id)}Idle.png`;
+          setTimeout(() => typeWriter(index + 1), p.speed);
+        } else {
+          avatar.src = `Images/${capitalize(p.id)}Idle.png`;
+        }
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !typed) {
+            typed = true;
+            typeWriter();
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.4 });
+
+      observer.observe(dialog);
+    });
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
   });
   </script>
 

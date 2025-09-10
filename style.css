@@ -122,6 +122,15 @@ html, body {
   z-index: 10;
 }
 
+.section-header {
+  width: 100%;
+  background: black;
+  padding: 20px 0;
+  border-bottom: 3px solid rgba(0, 200, 255, 0.7);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .section-title {
   margin: 0;
   font-family: 'Press Start 2P', cursive;
@@ -270,10 +279,6 @@ html, body {
   max-width: 300px;
 }
 
-.greatfox-img {
-  max-width: 450px;
-}
-
 .personaje-info {
   flex: 1;
   font-family: 'Press Start 2P', cursive;
@@ -300,8 +305,7 @@ html, body {
   height: 120px;
   object-fit: contain;
   margin-right: 15px;
-  
-  filter: drop-shadow(0 0 10px rgba(0,200,255,0.8));
+  filter: none;
 }
 
 .dialog-box {
@@ -322,72 +326,165 @@ html, body {
   white-space: pre-wrap;
 }
 
+.personaje.greatfox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.greatfox-container {
+  margin: 30px 0;
+}
+
+.greatfox-big {
+  max-width: 80%;
+  height: auto;
+}
+
+.personaje.greatfox .personaje-info {
+  font-size: 1vw;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.personaje.greatfox .transmision {
+  justify-content: center;
+}
+
+/* ===== Tips & Secretos ===== */
+.tips {
+  padding: 80px 40px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  text-align: left;
+}
+
+.tips-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1vw;
+  line-height: 1.6;
+}
+
+.routes-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.routes-container img {
+  max-width: 100%;
+  height: auto;
+  border: 4px solid #00c8ff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.6);
+}
+
+.routes-table img {
+  max-width: 60%;
+}
+
+.routes-table, .routes-map {
+  flex: 1;
+  text-align: center;
+}
+
+.map-caption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.miyamoto-text {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.6;
+}
+
+.miyamoto-text h3 {
+  color: #00c8ff;
+  margin-bottom: 15px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .arwing { width: 100vw; }
 
+  /* Hero */
+  .arwing { width: 100vw; top: 80%; }
   .pepper { width: 40vw; left: 3%; bottom: 22%; }
-  .starfox { width: 55vw; right: 3%; bottom: 18%; }
+  .starfox { width: 55vw; right: 3%; top: 20%; }
   .planet { width: 50vw; }
 
+  /* Texto inicio */
   .dialog { font-size: 3vw; width: 96%; }
   #start-text { font-size: 3vw; bottom: 48%; }
   #start-text .circle { width: 3vw; height: 3vw; }
   .copyright { font-size: 2vw; bottom: 46%; }
 
+  /* Sinopsis */
   .sinopsis {
     flex-direction: column;
     text-align: center;
   }
-
   .sinopsis-content {
     font-size: 3vw;
     text-align: center;
   }
+  .sinopsis-content .highlight { font-size: 3.5vw; }
+  .sinopsis-poster { margin-top: 30px; }
+  .sinopsis-poster img { width: 80%; }
 
-  .sinopsis-content .highlight {
-    font-size: 3.5vw;
-  }
+  /* Personajes */
+  .personaje { flex-direction: column; text-align: center; }
+  .personaje.invertido { flex-direction: column; }
+  .personaje-img { width: 60%; margin-bottom: 20px; }
+  .personaje-info { font-size: 3vw; }
+  .personaje-info h3 { font-size: 4vw; }
+  .avatar { width: 80px; height: 80px; margin: 0 auto 10px; }
+  .dialog-box { min-height: 80px; font-size: 2.5vw; width: 100%; }
 
-  .sinopsis-poster {
-    margin-top: 30px;
-  }
+  .personaje.greatfox { margin-bottom: 40px; }
 
-  .sinopsis-poster img {
-    width: 80%;
-  }
-
-  .personaje {
+  /* Rutas */
+  .routes-container {
     flex-direction: column;
-    text-align: center;
+    gap: 20px;
+    align-items: center;
   }
+  .routes-table img, .routes-map img { max-width: 90%; }
 
-  .personaje.invertido {
-    flex-direction: column;
-  }
-
-  .personaje-img {
-    width: 60%;
-    margin-bottom: 20px;
-  }
-
-  .personaje-info {
+  /* Miyamoto */
+  .miyamoto-text {
     font-size: 3vw;
+    margin: 0 auto 20px auto;
   }
+  .miyamoto-text h3 { font-size: 4vw; }
 
-  .personaje-info h3 {
-    font-size: 4vw;
-  }
+  /* Video */
+  .video-container { margin: 20px auto; }
 
-  .avatar {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 10px;
-  }
-
-  .dialog-box {
-    min-height: 80px;
-    font-size: 2.5vw;
-    width: 100%;
-  }
 }

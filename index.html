@@ -167,6 +167,46 @@
   </div>
 </section>
 
+<!-- Sección Gameplay -->
+<section id="gameplay" class="gameplay">
+  <div class="section-header">
+    <h2 class="section-title">GAMEPLAY</h2>
+  </div>
+
+  <!-- Explorar -->
+  <div class="gameplay-item">
+    <div class="gameplay-text">
+      <h3>Explora el Sistema Lylat</h3>
+      <p>Viaja entre planetas y sectores espaciales en una aventura llena de rutas alternativas y secretos por descubrir.</p>
+    </div>
+    <div class="gameplay-media">
+      <img src="Images/lylat_travel.gif" alt="Explorando el espacio">
+    </div>
+  </div>
+
+  <!-- Maniobras -->
+  <div class="gameplay-item reverse">
+    <div class="gameplay-text">
+      <h3>Haz Maniobras con tu Arwing</h3>
+      <p>Domina el icónico Barrel Roll y otras técnicas evasivas para esquivar ataques enemigos y sobrevivir a batallas intensas.</p>
+    </div>
+    <div class="gameplay-media">
+      <img src="Images/barrel_roll.gif" alt="Barrel Roll">
+    </div>
+  </div>
+
+  <!-- Jefes -->
+  <div class="gameplay-item">
+    <div class="gameplay-text">
+      <h3>Enfréntate a Jefes Épicos</h3>
+      <p>Lucha contra gigantescas naves y enemigos colosales en batallas que pondrán a prueba tus reflejos y estrategias.</p>
+    </div>
+    <div class="gameplay-media">
+      <img src="Images/boss_andross.gif" alt="Batalla contra jefes">
+    </div>
+  </div>
+</section>
+
 <!-- Sección Tips y Secretos -->
 <section id="tips" class="tips">
   <div class="section-header">
@@ -210,6 +250,75 @@
     </div>
   </div>
 </section>
+
+<!-- Sección Development -->
+<section id="development" class="development">
+  <div class="section-header">
+    <h2 class="section-title">DEVELOPMENT</h2>
+  </div>
+
+  <div class="development-content">
+    <p>
+      "Star Fox 64" fue diseñado para aprovechar al máximo la potencia del Nintendo 64, ofreciendo entornos 3D fluidos y secuencias cinemáticas que conectaban la acción con la historia del equipo Star Fox. El título introdujo el <strong>Rumble Pak</strong>, que inauguró una nueva forma de inmersión al hacer vibrar el control durante el juego. Además, con más de <strong>700 líneas de voz</strong> y un sistema de comunicación constante entre personajes, el juego logró una experiencia audiovisual nunca antes vista en la consola.
+    </p>
+
+    <p>
+      La música, compuesta por <strong>Koji Kondo y Hajime Wakai</strong>, combinó nuevas melodías con temas icónicos que se volverían característicos de la saga, como el leitmotiv del equipo Star Fox. En su versión europea, lanzada como <em>Lylat Wars</em>, se incluyó el ficticio <strong>idioma Lylat</strong>, un detalle único que reforzó la atmósfera espacial del juego.
+    </p>
+
+    <!-- Creadores principales -->
+    <div class="creadores">
+      <div class="creador">
+        <img src="Images/ShigeruMiyamoto.png" alt="Shigeru Miyamoto">
+        <p>Shigeru Miyamoto</p>
+      </div>
+      <div class="creador">
+        <img src="Images/TakayaImamura.png" alt="Takaya Imamura">
+        <p>Takaya Imamura</p>
+      </div>
+      <div class="creador">
+        <img src="Images/TakaoShimizu.png" alt="Takao Shimizu">
+        <p>Takao<br>Shimizu</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección Review Personal -->
+<section id="review" class="review">
+  <div class="section-header">
+    <h2 class="section-title">REVIEW PERSONAL</h2>
+  </div>
+
+  <div class="review-content">
+    <!-- Texto de la review -->
+    <div class="review-text">
+      <p>
+        Star Fox 64 fue el primer juego que realmente me conectó con el mundo de los videojuegos. A pesar de 
+        haber sido lanzado hace décadas, ha envejecido sorprendentemente bien y sigue siendo disfrutable hoy en día, 
+        incluso con los avances tecnológicos que hemos visto en la industria. Este juego tiene un significado 
+        muy personal para mí, ya que lo descubrí de la mano de mi padre cuando era niño, y cada vez que escucho  
+        la frase de James McCloud <strong>"Nunca te rindas, confía en tu instinto"</strong>, siento que es él
+		quien me la dice, guiándome y alentándome a seguir adelante.
+      </p>
+    </div>
+
+    <!-- Foto High Scores -->
+    <div class="review-image">
+      <img src="Images/highscores.png" alt="Mis High Scores Star Fox 64">
+    </div>
+  </div>
+
+  <!-- Transmisión James McCloud -->
+  <div class="transmision review-transmision">
+    <img src="Images/JamesIdle.png" alt="James McCloud" class="avatar" id="james-avatar">
+    <div class="dialog-box">
+      <p id="james-dialog"></p>
+    </div>
+  </div>
+</section>
+
+
 
 
   <!-- Script -->
@@ -275,7 +384,8 @@ Nuestro ejercito no podrá detenerlo por sí solo. ¡Dense prisa, Star Fox!`;
       { id: "falco", text: "¡Oye, Einstein, estoy de tu lado!", speed: 40 },
       { id: "slippy", text: "¡Slippy al habla, estoy bien!", speed: 40 },
       { id: "peppy", text: "¡Haz un tonel!", speed: 40 },
-      { id: "rob", text: "El Gran Fox te cubrirá.", speed: 40 }
+      { id: "rob", text: "El Gran Fox te cubrirá.", speed: 40 },
+	  { id: "james", text: "Nunca te rindas, confía en tu instinto.", speed: 40 }
     ];
 
     personajes.forEach(p => {
@@ -308,6 +418,16 @@ Nuestro ejercito no podrá detenerlo por sí solo. ¡Dense prisa, Star Fox!`;
 
   });
   </script>
+
+<footer class="footer">
+  <p>
+    Fuentes: 
+    <a href="https://www.spriters-resource.com/nintendo_64/starfox64/" target="_blank">Sprites Star Fox 64</a> | 
+    <a href="https://starfox.fandom.com/wiki/Main_Page" target="_blank">Arwingpedia</a> | 
+    <a href="https://tcrf.net/Star_Fox_64" target="_blank">TCRF</a> | 
+    <a href="https://starfoxwiki.info/wiki/Great_Fox" target="_blank">Star Fox Wiki</a>
+  </p>
+</footer>
 
 </body>
 </html>

@@ -352,6 +352,51 @@ html, body {
   justify-content: center;
 }
 
+/* ===== Gameplay ===== */
+.gameplay {
+  padding: 80px 40px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+}
+
+.gameplay-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;
+  gap: 40px;
+}
+
+.gameplay-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.gameplay-text {
+  flex: 1;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1vw;
+  line-height: 1.6;
+}
+
+.gameplay-text h3 {
+  color: #00c8ff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0,200,255,0.8);
+}
+
+.gameplay-media {
+  flex: 1;
+  text-align: center;
+}
+
+.gameplay-media img {
+  max-width: 100%;
+  border: 4px solid #00c8ff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,200,255,0.6);
+  background: rgba(0,0,0,0.5);
+}
+
 /* ===== Tips & Secretos ===== */
 .tips {
   padding: 80px 40px;
@@ -430,17 +475,130 @@ html, body {
   border: none;
 }
 
+/* ===== Development ===== */
+.development {
+  padding: 80px 40px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  text-align: left;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.development-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 1vw;
+  line-height: 1.6;
+}
+
+.development-content p {
+  margin-bottom: 30px;
+}
+
+.creadores {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.creador {
+  text-align: center;
+  max-width: 200px;
+}
+
+.creador img {
+  width: 100%;
+  border: 4px solid #00c8ff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,200,255,0.6);
+  margin-bottom: 12px;
+}
+
+.creador p {
+  font-size: 1vw;
+  color: #00c8ff;
+  text-shadow: 0 0 10px rgba(0,200,255,0.8);
+}
+
+.review {
+  padding: 80px 40px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.review-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.review-text {
+  flex: 1;
+  font-size: 1vw;
+  line-height: 1.6;
+}
+
+.review-image {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+}
+
+.review-image img {
+  max-width: 100%;
+  height: auto;
+  border: 4px solid #00c8ff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,200,255,0.6);
+}
+
+.review-transmision {
+  justify-content: center;
+  margin-top: 40px;
+}
+.review-transmision .dialog-box {
+  width: 550px;
+  min-height: 120px;
+}
+
+.footer {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7vw;
+  color: rgba(255,255,255,0.7);
+  padding: 15px 0;
+  background: rgba(0,0,0,0.6);
+  border-top: 2px solid #00c8ff;
+}
+
+.footer a {
+  color: #00c8ff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
 
   /* Hero */
-  .arwing { width: 100vw; top: 80%; }
-  .pepper { width: 40vw; left: 3%; bottom: 22%; }
-  .starfox { width: 55vw; right: 3%; top: 20%; }
-  .planet { width: 50vw; }
+  .arwing { width: 120vw; top: 30%; }
+  .foxteam { width: 100vw; top: 15%; }
+  .pepper { width: 35vw; left: 3%; top: 18%; }
+  .starfox { width: 40vw; right: 5%; top: 20%; }
+  .planet { width: 50vw; top: 30% }
 
   /* Texto inicio */
-  .dialog { font-size: 3vw; width: 96%; }
+  .dialog { font-size: 3vw; width: 90%; top: 40% }
   #start-text { font-size: 3vw; bottom: 48%; }
   #start-text .circle { width: 3vw; height: 3vw; }
   .copyright { font-size: 2vw; bottom: 46%; }
@@ -468,14 +626,35 @@ html, body {
   .dialog-box { min-height: 80px; font-size: 2.5vw; width: 100%; }
 
   .personaje.greatfox { margin-bottom: 40px; }
-
-  /* Rutas */
-  .routes-container {
+  
+  .gameplay-item,
+  .gameplay-item.reverse {
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    text-align: center;
   }
-  .routes-table img, .routes-map img { max-width: 90%; }
+  .gameplay-text {
+    margin-bottom: 20px;
+    font-size: 3vw;
+  }
+  .gameplay-text h3 {
+    font-size: 4vw;
+  }
+  
+  .tips-content {
+    font-size: 3vw;
+    line-height: 1.8;
+  }
+  
+  /* Rutas */
+  .routes-container, 
+  .routes-table, 
+  .routes-map {
+    font-size: 3vw;
+  }
+  
+  .map-caption {
+    font-size: 2.5vw;
+  }
 
   /* Miyamoto */
   .miyamoto-text {
@@ -486,5 +665,56 @@ html, body {
 
   /* Video */
   .video-container { margin: 20px auto; }
+  
+  .development-content {
+    font-size: 3vw;
+  }
+
+  .creador p {
+    font-size: 3.5vw;
+  }
+
+  .creador img {
+    width: 80%;
+  }
+
+  .development {
+    padding: 60px 20px;
+  }
+  
+  .review-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .review-text {
+    font-size: 3vw;
+    line-height: 1.8;
+  }
+
+  .review-text, .review-image {
+    width: 90%;
+  }
+
+  .transmision {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .dialog-box {
+    width: 95%;
+    min-height: 100px;
+    font-size: 3vw;
+  }
+
+  .greatfox-container {
+    margin: 20px auto;
+  }
+  
+  .footer {
+    font-size: 2.5vw;
+    padding: 10px 0;
+  }
 
 }
